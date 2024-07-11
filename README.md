@@ -1,5 +1,3 @@
-# `web`: The web application for the Noora platform
-
 ### Prerequisites
 
 The documentation below uses [`pnpm`](https://pnpm.io), but you can replace it with your package manager of choice.

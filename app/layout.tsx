@@ -1,11 +1,12 @@
+import "./globals.css";
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-
-import "./globals.css";
-import { ThemeProvider } from "@/src/providers/theme-provider";
-import { cn } from "@/src/lib/utils";
-import { Toaster } from "@/src/components/ui/sonner";
-import Footer from "@/src/components/common/footer";
+import { cn } from "../src/lib/utils";
+import { Toaster } from "sonner";
+import { ThemeProvider } from "../src/providers/theme-provider";
+import Footer from "../src/components/common/footer";
+import Navigation from "../src/components/navigation/navigation";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,13 +26,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        <body className={cn(inter.variable,"bg-background font-sans text-foreground antialiased")}>
+        <body
+          className={cn(
+            inter.variable,
+            "bg-background font-sans text-foreground antialiased",
+          )}
+        >
           <div className="flex min-h-screen w-full flex-col">
+            <Navigation />
             <div className="space-between mx-2 flex h-full flex-grow flex-col md:container">
-
-            <main className="mx-2 my-8 h-full flex-grow md:mx-8 md:ml-16">
+              <main className="mx-2 my-8 h-full flex-grow md:mx-8 md:ml-16">
                 {children}
               </main>
+
               <Toaster richColors closeButton />
             </div>
             <Footer />

@@ -1,8 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import { Icons } from "../ui/icons";
-import { cn } from "@/src/lib/utils";
-import { siteConfig } from "@/src/config/siteConfig";
+import { cn } from "../../lib/utils";
+import { siteConfig } from "../../config/siteConfig";
 
 export async function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
   return (
